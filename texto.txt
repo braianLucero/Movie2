@@ -1,0 +1,40 @@
+the movie DB Endpoints
+
+/upcoming
+/top_rated
+/popular //moviesPopularUseCase
+
+
+// explicacion adicional 
+Lo que has hecho es definir una serie de interfaces en TypeScript para representar la estructura de datos de las respuestas de dos tipos de consultas a la API de The Movie Database (TMDb): la respuesta de las películas que están actualmente en cartelera (NowPlayingResponse) y la respuesta de una consulta genérica de películas (MovieDBMovieResponse).
+
+NowPlayingResponse tiene las siguientes propiedades:
+dates: un objeto que contiene las fechas máxima y mínima para las que se muestran las películas.
+page: el número de página de resultados.
+results: un array de objetos Result que representan las películas.
+total_pages: el número total de páginas de resultados.
+total_results: el número total de resultados de la consulta.
+MovieDBMovieResponse es similar, pero sin la propiedad dates, ya que esta información no es necesaria para consultas genéricas de películas.
+Dates define la estructura de las fechas máxima y mínima.
+Result describe la estructura de cada película en la respuesta:
+adult: un booleano que indica si la película es para adultos.
+backdrop_path: la ruta de la imagen de fondo de la película.
+genre_ids: un array de identificadores de género de la película.
+id: el ID único de la película en la base de datos de TMDb.
+original_language: el idioma original de la película.
+original_title: el título original de la película.
+overview: una breve descripción de la trama de la película.
+popularity: un valor numérico que indica la popularidad de la película.
+poster_path: la ruta de la imagen del póster de la película.
+release_date: la fecha de lanzamiento de la película.
+title: el título de la película.
+video: un booleano que indica si la película tiene algún video asociado.
+vote_average: el promedio de votos de la película.
+vote_count: el número total de votos recibidos por la película.
+Estas interfaces te permiten trabajar de manera más segura y con mejor autocompletado al manipular los datos de las respuestas de la API de TMDb en tu código TypeScript.
+
+
+
+
+
+
