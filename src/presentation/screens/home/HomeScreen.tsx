@@ -11,7 +11,7 @@ export const HomeScreen = () => {
   const {isLoading, nowPlaying, popular, topRated, upcoming} = useMovies();
 
   if (isLoading) {
-    return <Text>Cargando..</Text>;
+    return <Text>Cargando...</Text>;
   }
 
   return (
@@ -19,7 +19,11 @@ export const HomeScreen = () => {
       <View style={{marginTop: 10, paddingBottom: 30}}>
         <PosterCarousel movies={nowPlaying} />
 
-        <HorizontalCarousel movies={popular} title="Populares" />
+        <HorizontalCarousel
+          movies={popular}
+          title="Populares"
+          loadNextPage={() => console.log('fin alcanzado ')}
+        />
         <HorizontalCarousel movies={topRated} title="Mejor calificadas " />
         <HorizontalCarousel movies={upcoming} title="Proximamente" />
       </View>
