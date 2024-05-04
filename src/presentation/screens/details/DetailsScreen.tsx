@@ -18,7 +18,11 @@ export const DetailScreen = ({route}: Props) => {
 
   return (
     <View>
-      <MovieHeader movie={movie!} />
+      <MovieHeader
+        originalTitle={movie!.originalTitle}
+        title={movie!.title}
+        poster={movie!.poster}
+      />
     </View>
   );
 };
