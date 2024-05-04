@@ -4,6 +4,7 @@ import {Text, View} from 'react-native';
 import {RootStackParams} from '../../navigation/Navigation';
 import {useMovie} from '../../hooks/useMovie';
 import {MovieHeader} from '../../components/movies/movie/MovieHeader';
+import {MovieDetails} from '../../components/movies/movie/MovieDetails';
 interface Props extends StackScreenProps<RootStackParams, 'Details'> {}
 
 export const DetailScreen = ({route}: Props) => {
@@ -23,6 +24,8 @@ export const DetailScreen = ({route}: Props) => {
         title={movie!.title}
         poster={movie!.poster}
       />
+
+      <MovieDetails movie={movie!} />
     </View>
   );
 };
