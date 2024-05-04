@@ -4,9 +4,13 @@ import {MovieDBCastResponse} from '../../../infrastructure/interface/movie-db.re
 export const getMovieCastUseCase = async (
   fetcher: HttpAdapter,
   movieId: number,
-) => {
+): Promise<> => {
   try {
-    const {} = await fetcher.get<MovieDBCastResponse>(`/${movieId}/credits`);
+    const {cast} = await fetcher.get<MovieDBCastResponse>(
+      `/${movieId}/credits`,
+    );
+    const actors = cast;
+    return actors;
   } catch (error) {
     throw new Error(`cannot get movie cast ${movieId}`);
   }

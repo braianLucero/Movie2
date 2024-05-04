@@ -96,8 +96,8 @@ export interface SpokenLanguage {
 
 export interface MovieDBCastResponse {
   id: number;
-  cast: Cast[];
-  crew: Cast[];
+  cast: MovieDBCast[];
+  crew: MovieDBCast[];
 }
 
 export interface Cast {
