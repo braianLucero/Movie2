@@ -7,6 +7,7 @@ export class CastMapper {
       id: actor.id,
       name: actor.name,
       character: actor.character ?? 'no character',
+      avatar:actor.profile_path ? `http://image.tmdb.org/t/p/w500`
     };
   }
 }
