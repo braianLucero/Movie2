@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleSheet, useWindowDimensions, View, Image} from 'react-native';
+import {
+  StyleSheet,
+  useWindowDimensions,
+  View,
+  Image,
+  Text,
+  Pressable,
+} from 'react-native';
 import {FullMovie} from '../../../../core/entities/movie.entity';
 import {useNavigation} from '@react-navigation/native';
 interface Props {
@@ -12,8 +19,18 @@ export const MovieHeader = ({movie}: Props) => {
     <>
       <View style={{...styles.imageContainer, height: screenHeight * 0.7}}>
         <View style={styles.imageBorder}>
-          <Image source={{uri: movie.poster}} />
+          <Image style={styles.posterImage} source={{uri: movie.poster}} />
         </View>
+      </View>
+      <View style={styles.imageContainer}>
+        <Text style={styles.subTitle}>{movie.originalTitle}</Text>
+        <Text style={styles.title}>{movie.title}</Text>
+      </View>
+
+      <View style={styles.backButton}>
+        <Pressable onPress={() => navigation.goBack()}>
+          <Text style={styles.backButtonText}>Regresando</Text>
+        </Pressable>
       </View>
     </>
   );
