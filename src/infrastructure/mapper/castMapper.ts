@@ -1,5 +1,5 @@
 import {MovieDBCast} from '../interface/movie-db.responses';
-import {Cast} from '../interface/movie-db.responses';
+import {Cast} from '../../core/entities/cast.etity';
 
 export class CastMapper {
   static fromMovieDBCastToEntity(actor: MovieDBCast): Cast {
@@ -7,7 +7,9 @@ export class CastMapper {
       id: actor.id,
       name: actor.name,
       character: actor.character ?? 'no character',
-      avatar:actor.profile_path ? `http://image.tmdb.org/t/p/w500`
+      avatar: actor.profile_path
+        ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
+        : 'https://i.stack.imgur.com/l60Hf.png',
     };
   }
 }
